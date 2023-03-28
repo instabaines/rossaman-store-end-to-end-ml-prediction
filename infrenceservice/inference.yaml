@@ -1,0 +1,9 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "sales-predictor"
+spec:
+  predictor:
+    sklearn:
+      image:  baines23/kserve-sklearnserver:sales-3.8-1.0.2
+      storageUri: "http://10.8.0.1:8000/model.pkl"
